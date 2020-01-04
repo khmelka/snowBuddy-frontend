@@ -1,13 +1,36 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {setAlert} from '../../redux/actions/alert'
+import {register} from '../../redux/actions/auth'
 
-const Register = props => {
+const Register = ({setAlert, register}) => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        password: "",
+        password2: ""
+    })
+
+    const {name, email, password,password2} = formData
+
+    const onChange = (event) => setFormData({...formData, [event.target.name]: event.target.value })
+
+    const onSubmit = async (event) => {
+        event.preventDefault()
+        if(password !== password2) {
+           setAlert('Passwords do not match', 'danger')
+        }
+        else {
+            register(({name, email, password}))
+      }
+  }
     return (
         <div className="signinMainContainer">
             <div className="row">
                 <div className="col-md-4 col-md-4 col-md-12">
-                    <form className="form-container" >
+                    <form className="form-container" onSubmit={(event) => onSubmit(event)}>
                         <div className="mainname">
                             <h1 className="name">Welcome to Ski Buddy!</h1>
                         </div>
@@ -17,6 +40,8 @@ const Register = props => {
                                 className="form-control" 
                                 placeholder="Name" 
                                 name="name" 
+                                value={name}
+                                onChange ={event => onChange(event)}
                             />
                         </div>
                         <div className="form-group">
@@ -25,6 +50,8 @@ const Register = props => {
                                 className="form-control" 
                                 placeholder="Email" 
                                 name="email" 
+                                value={email}
+                                onChange ={event => onChange(event)}
                             />
                         </div>
                         <div className="form-group">
@@ -33,17 +60,21 @@ const Register = props => {
                                 className="form-control" 
                                 placeholder="Password" 
                                 name="password" 
+                                value={password}
+                                onChange ={event => onChange(event)}
                             />
                         </div>
                         <div className="form-group">
                             <input 
-                                type="password2" 
+                                type="password" 
                                 className="form-control" 
                                 placeholder="Confirm Password" 
                                 name="password2" 
+                                value={password2}
+                                onChange ={event => onChange(event)}
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary"><Link to='/homepage'>Register</Link></button>
+                        <input type="submit" className="btn btn-primary" value="Register" />
                      </form>
                   </div>
              </div>
@@ -52,7 +83,13 @@ const Register = props => {
 }
 
 Register.propTypes = {
-
+    setAlert: PropTypes.func.isRequired,
+    register: PropTypes.func.isRequired,
+    // isAuthenticated: PropTypes.bool
 }
 
-export default Register
+const mapStateToProps = state => ({
+    // isAuthenticated: state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps, {setAlert, register})(Register)
