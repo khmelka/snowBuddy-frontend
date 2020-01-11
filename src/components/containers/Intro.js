@@ -2,12 +2,20 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-const MainPage = props => {
+const Intro = props => {
     return (
         <section className="landing">
             <div className="overlay">
                 <div className="landing-inner">
-                    <h1 className="x-large" style={{color:"blue"}}>Ski Buddy</h1>
+                <img src="./000592-Skiing-Logo-design-free-logos-02.png" id="skiLogoIntro" alt="ski logo"/>
+                    <h1 className="mainTitle">
+                        <span>S</span>
+                        <span>k</span>
+                        <span>i</span>
+                        <span>B</span>
+                        <span>u</span>
+                        <span>d</span>
+                    </h1>
                     <p className="lead">
                         Create an account, and connect with other skiers and see Resorts in Colorado 
                     </p>
@@ -21,8 +29,8 @@ const MainPage = props => {
     )
 }
 
-MainPage.propTypes = {
+Intro.propTypes = {
 
 }
 
-export default MainPage
+export default Intro

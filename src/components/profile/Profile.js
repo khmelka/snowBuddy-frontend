@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const Profile = props => {
     return (
         <div>
-            My PROFILE
+            <h1>My PROFILE</h1>
         </div>
     )
 }

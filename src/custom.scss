@@ -11,6 +11,16 @@ body {
     background-repeat: no-repeat; 
   }
 
+.container {
+  // display: flex;
+  // align-items: center;
+  margin-top: 1.5rem;
+}
+
+.mapPage {
+  display: grid;
+  grid-template-columns: 33.1% 70%;
+}
   //intro page
 .landing {
     position: relative;
@@ -61,6 +71,67 @@ body {
     box-shadow: -1px 4px 26px 11px rgba(163, 169, 247, 0.4);
     background: rgba(129, 131, 255, 0.719);
 }
+
+//profie form 
+.profileFormMainContainer{
+    margin-top: 100px;
+}
+
+.form-group{
+  margin-top: 25px;
+  display: grid;
+}
+
+.form-group input[type='text'],
+.form-group input[type='email'],
+.form-group input[type='password'],
+.form-group input[type='date'],
+.form-group textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  // font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+.form-group select{
+  font-size: 1.2rem
+}
+
+.social-input {
+  display: flex;
+}
+
+.social-input i {
+  padding: 0.5rem;
+  width: 4rem;
+}
+
+// .social-input i.fa-facebook {
+//   color: #7da5fa;
+// }
+// .social-input i.fa-instagram {
+//   color: #3f729b;
+// }
+
+
+.lead {
+  color: white;
+
+}
+.profileForm{
+  color: rgb(255, 251, 251);
+  padding: 45px 60px;
+  width: 700px;
+  margin: auto;
+  margin-top: -80px;
+  -webkit-box-shadow: -1px 4px 26px 11px rgba(145, 135, 238, 0.4);
+  -moz-box-shadow: -1px 4px 26px 11px rgba(205, 170, 245, 0.4);
+  box-shadow: -1px 4px 26px 11px rgba(163, 169, 247, 0.4);
+  background: rgba(129, 131, 255, 0.719);
+}
+
+
+
 
 //alert
 .badge {
@@ -128,3 +199,208 @@ body {
   color: #333;
   border: #ccc solid 1px;
 }
+
+// .navbar{
+//   background-color: rgba(133, 133, 246, 0.322);
+// 
+//Navbar
+nav.navbar {
+  // height: 50px;
+  padding: 0;
+  background-color: rgba(133, 133, 246, 0.322);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  border-bottom: solid 1px var(--primary-color);
+  opacity: 0.9;
+  height: 45px;
+  // margin-bottom: 20px;
+}
+
+.navbar-end {
+  padding-bottom: 30px;
+  margin-right: 20px;
+}
+
+.navbar-brand {
+  margin-left: 15px;
+}
+
+#skiLogoNav{
+  width: 60px;
+  height: 50px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+.navbar a {
+  color: #fff;
+  // padding: 0.45rem;
+  margin: 0 0.25rem;
+}
+
+.navbar a:hover {
+  color: var(--primary-color);
+}
+
+.navbar .welcome span {
+  margin-right: 0.6rem;
+}
+
+//user name style
+.circle {
+   /* circle styles */
+  //  width: 50px;
+  //  height: 50px;
+  //  border: 1px solid rgb(62, 90, 246);
+  //  border-radius: 50%;
+   
+  //  /* become a flex container */
+  //  /* its children will be flex items */
+  //  display: flex;
+  //  /* place items in column */
+  //  flex-direction: column;
+  //  /* center flex items horizontally */
+  //  align-items: center;
+  //  /* center all content vertically */
+  //  justify-content: center;
+ }
+ 
+ /* simulate one more item to "balance" dex text */
+ .circle:before {
+   content: "\A0";
+   visibility: hidden;
+ }
+
+
+//skiBuddy title
+.titleNameNav{
+  color: white;
+  font-style: bold;
+}
+
+
+
+//intro page
+.mainTitle{
+  color: blue
+}
+
+// .mainTitle {
+//   position: relative;
+//   width: 520px;
+//   height:300px;
+//   margin: 0 auto;
+//   font-size: 70px;
+//   margin-bottom: -15.9rem;
+//   margin-left: 10.1rem
+// }
+// .mainTitle span {
+//   position: absolute;
+//   bottom: 0;
+//   left: 50%;
+//   width: 70px;
+//   height: 400px;
+//   margin-left: -35px;
+//   line-height: 200px; /* height*2 - font-size */
+//   text-align: center;
+//   transform-origin: top center;
+// }
+// .mainTitle span:nth-of-type(1)  {
+//   transform: rotate(60deg);
+// }
+// .mainTitle span:nth-of-type(2)  {
+//   transform: rotate(40deg);
+// }
+// .mainTitle span:nth-of-type(3)  {
+//   transform: rotate(25deg);
+// }
+// .mainTitle span:nth-of-type(4)  {
+//   transform: rotate(0);
+// }
+// .mainTitle span:nth-of-type(5)  {
+//   transform: rotate(-20deg);
+// }
+// .mainTitle span:nth-of-type(6)  {
+//   transform: rotate(-40deg);
+// }
+// .mainTitle span:nth-of-type(7)  {
+//   transform: rotate(-64deg);
+// }
+// .mainTitle span:nth-of-type(8)  {
+//   transform: rotate(-86deg);
+// }
+// .mainTitle span:nth-of-type(9)  {
+//   transform: rotate(-80deg);
+// }
+
+//map
+.map{
+  // border: 2px green solid;
+  // width: -webkit-fill-available;
+  // height: 600px;
+}
+.style {
+  // height: 100vh;
+  // width: 500px;
+  height: 700px;
+  width: 750px;
+  float: right;
+  border:rgb(255, 255, 255) 5px solid;
+  display: block;
+  // width: -webkit-fill-available;
+  // -webkit-box-shadow: -1px 4px 26px 11px rgba(155, 170, 240, 0.75);
+  // -moz-box-shadow: -1px 4px 26px 11px rgba(155, 170, 240, 0.75);
+  // box-shadow: -1px 4px 26px 11px rgba(155, 170, 240, 0.75);
+}
+
+#logo{
+  height: 3rem;
+  margin-bottom: 1.1rem;
+}
+
+//resorts 
+.list-group-item.list-group-item-action{
+  background: rgba(107, 144, 246, 0.692);
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  width: 350px;
+  display: flex;
+  height: 42.2px;
+  // text-align: center;
+  
+}
+a.list-group-item.list-group-item-action:hover{
+background-color: rgba(53, 65, 226, 0.205);
+color: white;
+// margin-top: 0;
+}
+
+.resortTitle {
+  background: rgba(107, 144, 246, 0.692);
+  color: rgb(255, 255, 255);
+  font-size: 1.6rem;
+  width: 350px;
+  display: block;
+  height: 42.2px;
+  text-align: center;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  padding-top: 2.5px;
+  border: 1px solid white;
+  // position: fixed;
+}
+
+.list-group {
+  overflow-y: auto;
+  max-height: 700px;
+}
+

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import{connect} from 'react-redux'
 import {login} from '../../redux/actions/auth'
 
-const Login = ({login, isAuthenticated, user}) => {
+const Login = ({login, isAuthenticated}) => {
     const [formData, setFormData] = useState({
         email: "",
         password: ""
@@ -19,9 +19,8 @@ const Login = ({login, isAuthenticated, user}) => {
         login(email, password)
       
   }
-//   console.log("from login", user && user.name)
     if (isAuthenticated) {
-        return <Redirect to="/homepage" />
+        return <Redirect to='/homepage'/>
     }
 
     return (
