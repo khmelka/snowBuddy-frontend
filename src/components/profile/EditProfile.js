@@ -52,10 +52,10 @@ const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProf
         <div className="col-md-4 col-md-4 col-md-12">
 
         <form className="profileForm" onSubmit={(event) => onSubmit(event)}>
-                <h1 className="lead">
-                    <i className="fas fa-user" style={{zoom: 1.6}}></i><b>Create Your Profile</b>
-                </h1>
-        <small>* = required field</small>
+        <h2 style={{textAlign:'center'}}>
+                    Edit Your Profile
+                </h2>
+        {/* <small>* = required field</small> */}
         
             <div className="form-group">
                 <select name="sport" value={sport} onChange={(event) => onChange(event)}>

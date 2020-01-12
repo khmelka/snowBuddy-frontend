@@ -21,7 +21,7 @@ const HomePage = ({getCurrentProfile, auth: {user}, profile: {profile, loading}}
                {user && user.name}
             </h4>
         {profile !==null ? <Fragment><HomeActions /></Fragment> : <Fragment>
-            <p>You don't have a profile yet, please creare one</p>
+            <p>You don't have a profile yet, please create one!</p>
             <Link to='/create-profile' className='btn btn-primary my-1'> Create profile</Link>
             </Fragment> }
         </Fragment> }

@@ -10,7 +10,7 @@ export const loadUser = () => async dispatch => {
         setAuthToken(localStorage.token)
     }
     try {
-        const res = await axios.get('/auth')
+        const res = await axios.get('https://lit-sands-19035.herokuapp.com/auth')
         dispatch ({
             type: USER_LOADED,
             payload: res.data
@@ -32,7 +32,7 @@ export const register = ({name, email, password}) => async dispatch => {
     const body = JSON.stringify({name, email, password})
     
     try {
-        const res = await axios.post('/users', body, config)
+        const res = await axios.post('https://lit-sands-19035.herokuapp.com/users', body, config)
         console.log("register data", body)
         dispatch({
             type: REGISTER_SUCCESS,
@@ -61,7 +61,7 @@ export const login = (email, password) => async dispatch => {
     const body = JSON.stringify({email, password}) 
     
     try {
-        const res = await axios.post('/auth', body, config)
+        const res = await axios.post('https://lit-sands-19035.herokuapp.com/auth', body, config)
         console.log("login data", body)
         dispatch({
             type: LOGIN_SUCCESS,

@@ -6,12 +6,17 @@ import Spinner from '../containers/Spinner'
 import {getProfileById} from '../../redux/actions/profile'
 import Profile from './Profile'
 
-const ProfileContainer = ({getProfileById, profile: {profile, loading}, auth, match}) => {
+const ProfileContainer = ({getProfileById, profile: {profile, loading}, auth: {user}, match}) => {
     useEffect(() => {
         getProfileById(match.params.id)
     }, [getProfileById,match.params.id])
+    console.log(loading, 'loading from profile')
     return  <Fragment>
-        {profile === null || loading ? <Spinner /> : 
+        { profile === null ? 
+            <div className="settings"><h3>You have created a profile yet!</h3> <br></br>
+            <Link to='/create-profile' className='btn btn-primary my-1'> Create profile</Link>
+            </div> :
+        loading ? <Spinner /> : 
             <Fragment>
                  <div>
                     <Profile profile = {profile} />

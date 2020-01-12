@@ -38,14 +38,14 @@ const CreateProfile = ({createProfile, history}) => {
         <div className="col-md-4 col-md-4 col-md-12">
 
         <form className="profileForm" onSubmit={(event) => onSubmit(event)}>
-                <h1 className="lead">
-                    <i className="fas fa-user" style={{zoom: 1.6}}></i><b>Create Your Profile</b>
-                </h1>
-        <small>* = required field</small>
+                <h2 style={{textAlign:'center'}}>
+                    Create Your Profile
+                </h2>
+        {/* <small>* = required field</small> */}
         
             <div className="form-group">
                 <select name="sport" value={sport} onChange={(event) => onChange(event)}>
-                    <option value="0">* Select Your Preference</option>
+                    <option value="0">Select Your Preference</option>
                     <option value="Ski">Ski</option>
                     <option value="Snowboard">Snowboard</option>
                     <option value="Ski and Snowboard">Ski and Snowboard</option>
@@ -54,7 +54,7 @@ const CreateProfile = ({createProfile, history}) => {
 
             <div className="form-group">
                 <select name="skilevel" value={skilevel} onChange={(event) => onChange(event)}>
-                    <option value="0">* Select Ski Level</option>
+                    <option value="0">Select Ski Level</option>
                     <option value="Beginner">Beginner</option>
                     <option value="Intermediate">Intermediate</option>
                     <option value="Advanced">Advanced</option>
@@ -62,7 +62,7 @@ const CreateProfile = ({createProfile, history}) => {
             </div>
             <div className="form-group">
                 <select name="snblevel" value={snblevel} onChange={(event) => onChange(event)}>
-                    <option value="0">* Select Snowboard Level</option>
+                    <option value="0">Select Snowboard Level</option>
                     <option value="Beginner">Beginner</option>
                     <option value="Intermediate">Intermediate</option>
                     <option value="Advanced">Advanced</option>

@@ -76,7 +76,11 @@ body {
 
 //profie form 
 .profileFormMainContainer{
-    margin-top: 100px;
+    margin-top: 130px;
+}
+
+form.profileForm {
+  padding-top: 25px;
 }
 
 .form-group{
@@ -468,11 +472,11 @@ color: white;
 
 .myProfile {
    background-color: rgba(79, 110, 248, 0.712);
-   padding: 20px;
+   padding: 60px;
    color: white;
    border: 1px solid white;
    margin-top: 20px;
-   height: 700px;
+  //  height: 700px;
 }
 
 .profiles{
@@ -482,6 +486,31 @@ color: white;
 
 .round-img.my-1 {
   width: 250px;
+}
+
+.profileName {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.profileBottom{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 20px;
+  color: blue;
+}
+
+.items {
+  background-color: rgba(88, 88, 255, 0.678);
+  color: white;
+  padding: 20px;
+}
+
+.bio {
+  background-color: rgba(88, 88, 255, 0.678);
+  color: white;
+  padding: 20px;
 }
 
 //profile actions

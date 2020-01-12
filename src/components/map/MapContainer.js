@@ -64,18 +64,23 @@ export class MapContainer extends Component {
         fetch("https://blooming-everglades-24576.herokuapp.com/resorts")
         .then(resp=>resp.json())
         .then(resorts=> {
-            console.log("resorts", resorts)
+            console.log("loading", this.state.loading)
             this.setState({
-                resorts,
-                loading: false
+                resorts
             })
             
           })
     }
 
+    setLoading = () => {
+        this.setState({
+            loading:false
+        })
+       }
+
     //check the spinner 
     render() {
-        return ( this.state.loading && this.state.resorts === [] ? <Spinner /> : <Fragment>
+        return ( this.state.resorts === null && this.state.loading ? <h1>LOADING</h1> : <Fragment>
             <div className='mapPage'>
                 <ResortContainer resorts={this.state.resorts} setSelectedResort={this.setSelectedResort} />
                 <Map resorts={this.state.resorts} setSelectedResort={this.setSelectedResort} selectedResort={this.state.selectedResort}/>

@@ -6,7 +6,7 @@ import {GET_PROFILE, PROFILE_ERROR, GET_ALL_PROFILES, CLEAR_PROFILE} from './typ
 //
 export const getCurrentProfile = () => async dispatch => {
     try {  
-        const res = await axios.get('/profile/me')
+        const res = await axios.get('https://lit-sands-19035.herokuapp.com/profile/me')
         console.log("data profile", res.data)
         dispatch ({
             type: GET_PROFILE,
@@ -16,7 +16,7 @@ export const getCurrentProfile = () => async dispatch => {
         dispatch({
             type: PROFILE_ERROR,
             payload: { msg: error.response.statusText, status: error.response.status }
-        })
+        })  
     }
 }
 
@@ -29,7 +29,7 @@ export const createProfile=(formData, history, edit = false) => async dispatch =
             }
         }
 
-        const res = await axios.post('/profile/', formData, config)
+        const res = await axios.post('https://lit-sands-19035.herokuapp.com/profile/', formData, config)
         dispatch ({
             type: GET_PROFILE,
             payload: res.data
@@ -55,7 +55,7 @@ export const createProfile=(formData, history, edit = false) => async dispatch =
 export const getAllProfiles = () => async dispatch => {
     dispatch ({type: CLEAR_PROFILE})
     try {  
-        const res = await axios.get('/profile')
+        const res = await axios.get('https://lit-sands-19035.herokuapp.com/profile')
         dispatch ({
             type: GET_ALL_PROFILES,
             payload: res.data
@@ -71,7 +71,7 @@ export const getAllProfiles = () => async dispatch => {
 //get profile by id
 export const getProfileById = (userId) => async dispatch => {
     try {  
-        const res = await axios.get(`/profile/user/${userId}`)
+        const res = await axios.get(`https://lit-sands-19035.herokuapp.com/profile/user/${userId}`)
         dispatch ({
             type: GET_PROFILE,
             payload: res.data
