@@ -153,7 +153,7 @@ form.profileForm {
   padding: 0.8rem;
   margin: 1rem 0;
   opacity: 0.9;
-  background: var(--light-color);
+  // background: var(--light-color);
   color: #333;
 }
 
@@ -161,7 +161,7 @@ form.profileForm {
 .bg-primary,
 .badge-primary,
 .alert-primary {
-  background: var(--primary-color);
+  // background: var(--primary-color);
   color: #fff;
 }
 
@@ -169,7 +169,7 @@ form.profileForm {
 .bg-light,
 .badge-light,
 .alert-light {
-  background: var(--light-color);
+  // background: var(--light-color);
   color: #333;
 }
 
@@ -185,7 +185,7 @@ form.profileForm {
 .bg-danger,
 .badge-danger,
 .alert-danger {
-  background: var(--danger-color);
+  // background: var(--danger-color);
   color: #fff;
 }
 
@@ -521,3 +521,4 @@ color: white;
   text-align: center;
   margin-top: 70px;
 }
+
