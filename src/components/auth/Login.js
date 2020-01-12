@@ -19,11 +19,10 @@ const Login = ({login, isAuthenticated, user}) => {
         login(email, password)
       
   }
-//   console.log("from login", user && user.name)
     if (isAuthenticated) {
-        return <Redirect to="/homepage" />
+        return <Redirect to='/homepage'/>
     }
-
+// console.log('user', user && user._id)
     return (
         <div className="signinMainContainer">
             <div className="row">
@@ -67,7 +66,7 @@ Login.propTypes = {
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
-    user: state.auth.user
+    user: state.auth.user,
 })
 
 export default connect(mapStateToProps, {login})(Login)

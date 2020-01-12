@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {REGISTER_SUCCESS, REGISTER_FAIL, LOGIN_SUCCESS, LOGIN_FAIL, USER_LOADED, AUTH_ERROR, LOGOUT} from './types'
+import {REGISTER_SUCCESS, REGISTER_FAIL, LOGIN_SUCCESS, LOGIN_FAIL, USER_LOADED, AUTH_ERROR, LOGOUT, CLEAR_PROFILE} from './types'
 import {setAlert} from './alert'
 import setAuthToken from '../../token/setAuthToken'
 
@@ -10,7 +10,7 @@ export const loadUser = () => async dispatch => {
         setAuthToken(localStorage.token)
     }
     try {
-        const res = await axios.get('/auth')
+        const res = await axios.get('https://lit-sands-19035.herokuapp.com/auth')
         dispatch ({
             type: USER_LOADED,
             payload: res.data
@@ -32,13 +32,13 @@ export const register = ({name, email, password}) => async dispatch => {
     const body = JSON.stringify({name, email, password})
     
     try {
-        const res = await axios.post('/users', body, config)
+        const res = await axios.post('https://lit-sands-19035.herokuapp.com/users', body, config)
         console.log("register data", body)
         dispatch({
             type: REGISTER_SUCCESS,
             payload: res.data
         })
-        // dispatch(loadUser())
+        dispatch(loadUser())
     } catch (error) {
         console.error(error)
         const errors = error.response.data.errors
@@ -61,7 +61,7 @@ export const login = (email, password) => async dispatch => {
     const body = JSON.stringify({email, password}) 
     
     try {
-        const res = await axios.post('/auth', body, config)
+        const res = await axios.post('https://lit-sands-19035.herokuapp.com/auth', body, config)
         console.log("login data", body)
         dispatch({
             type: LOGIN_SUCCESS,
@@ -81,6 +81,6 @@ export const login = (email, password) => async dispatch => {
 
 //logout
 export const logout = () => dispatch => {
-    // dispatch({type:CLEAR_PROFILE})
+    dispatch({type:CLEAR_PROFILE})
     dispatch({type:LOGOUT})
 }
