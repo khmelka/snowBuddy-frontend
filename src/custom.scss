@@ -9,6 +9,8 @@ body {
     background-image: url("https://wallpapercave.com/wp/rtMojAI.jpg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat; 
+    background-attachment: fixed;
+
   }
 
 .container {
@@ -204,42 +206,73 @@ body {
 //   background-color: rgba(133, 133, 246, 0.322);
 // 
 //Navbar
+// nav.navbar {
+//   // height: 50px;
+//   padding: 0;
+//   background-color: rgba(133, 133, 246, 0.322);
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   position: relative;
+//   z-index: 1;
+//   width: 100%;
+//   top: 0;
+//   border-bottom: solid 1px var(--primary-color);
+//   opacity: 0.9;
+//   height: 45px;
+//   // margin-bottom: 20px;
+// }
+
+
 nav.navbar {
-  // height: 50px;
-  padding: 0;
-  background-color: rgba(133, 133, 246, 0.322);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 1;
   width: 100%;
-  top: 0;
-  border-bottom: solid 1px var(--primary-color);
-  opacity: 0.9;
-  height: 45px;
-  // margin-bottom: 20px;
+  background-color: rgba(133, 133, 246, 0.322);
+  border: 1px solid rgb(255, 255, 255);
+  border-right: none;
+  display: block;
 }
 
-.navbar-end {
-  padding-bottom: 30px;
-  margin-right: 20px;
+nav ul {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-brand {
-  margin-left: 15px;
+nav ul li {
+  list-style: none;
+  float: left;
+  text-align: center;
+  // border-left: 1px solid #fff;
+  // border-right: 1px solid #ccc;
+  // width: 20%; /* fallback for non-calc() browsers */
+  width: calc(100% / 5);
+  box-sizing: border-box;
 }
+
+nav ul li:first-child {
+  border-left: none;
+}
+
+nav.navbar ul li a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 0;
+  background-color: rgb(96, 132, 231);
+}
+
+nav.navbar ul li a:hover {
+  background-color: white;
+  color: rgb(88, 71, 240);
+}
+
 
 #skiLogoNav{
   width: 60px;
   height: 50px;
 }
 
-.navbar ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-}
+
 
 .navbar a {
   color: #fff;
@@ -404,3 +437,58 @@ color: white;
   max-height: 700px;
 }
 
+//profiles page
+.skipages{
+  margin: 0;
+  padding-top: 8px;
+  text-align: center;
+  background-color: cornflowerblue;
+  color: white;
+  border: 1px solid white;
+  margin-bottom: 40px;
+}
+
+.profile {
+  padding: 20px;
+  height: 200px;
+  // width: 400px;
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.815);
+  display: grid;
+  grid-template-columns:  37% 40% 30%;
+  border: 1px solid white;
+}
+
+.round-img {
+  border-radius: 50%;
+  width: 150px;
+}
+
+//my profile
+
+.myProfile {
+   background-color: rgba(79, 110, 248, 0.712);
+   padding: 20px;
+   color: white;
+   border: 1px solid white;
+   margin-top: 20px;
+   height: 700px;
+}
+
+.profiles{
+  // display: grid;
+  // grid-template-columns: 50% 50%;
+}
+
+.round-img.my-1 {
+  width: 250px;
+}
+
+//profile actions
+
+.settings {
+  background-color: rgba(238, 242, 248, 0.781);
+  padding: 20px;
+  text-align: center;
+  margin-top: 70px;
+}

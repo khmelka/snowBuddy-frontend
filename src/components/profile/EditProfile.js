@@ -6,11 +6,11 @@ import {createProfile, getCurrentProfile} from '../../redux/actions/profile'
  
 const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProfile, history}) => {
     const [formData, setFormData] = useState({
-        level: '',
-        about: '',
-        status: '',
-        titles: '',
-        competitions: '',
+        sport: '',
+        skilevel: '',
+        snblevel: '',
+        location: '',
+        bio: '',
         facebook: '',
         instagram: ''
     })
@@ -20,22 +20,22 @@ const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProf
         getCurrentProfile()
         setFormData({
     //check if profile is loading and there is no data => null
-            level: loading || !profile.level ? '' : profile.level,
-            about: loading || !profile.about ? '' : profile.about,
-            status: loading || !profile.status ? '' : profile.status,
-            titles: loading || !profile.titles ? '' : profile.titles,
-            competitions: loading || !profile.competitions ? '' : profile.competitions,
+            sport: loading || !profile.sport ? '' : profile.sport,
+            skilevel: loading || !profile.skilevel ? '' : profile.skilevel,
+            snblevel: loading || !profile.snblevel ? '' : profile.snblevel,
+            bio: loading || !profile.bio ? '' : profile.bio,
+            location: loading || !profile.location ? '' : profile.location,
             facebook: loading || !profile.facebook ? '' : profile.facebook,
             instagram: loading || !profile.instagram ? '' : profile.instagram,
 
         })
     }, [loading, getCurrentProfile])
 
-    const { level,
-            about,
-            status,
-            titles,
-            competitions,
+    const { sport,
+            skilevel,
+            snblevel,
+            location,
+            bio,
             facebook,
             instagram
         } = formData
@@ -58,37 +58,38 @@ const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProf
         <small>* = required field</small>
         
             <div className="form-group">
-                <select name="level" value={level} onChange={(event) => onChange(event)}>
-                    <option value="0">* Select Ski Level</option>
+                <select name="sport" value={sport} onChange={(event) => onChange(event)}>
+                    <option value="0">Select Your Preference</option>
+                    <option value="Ski">Ski</option>
+                    <option value="Snowboard">Snowboard</option>
+                    <option value="Ski and Snowboard">Ski and Snowboard</option>
+                </select>
+            </div>
+
+            <div className="form-group">
+                <select name="skilevel" value={skilevel} onChange={(event) => onChange(event)}>
+                    <option value="0">Select Ski Level</option>
                     <option value="Beginner">Beginner</option>
                     <option value="Intermediate">Intermediate</option>
                     <option value="Advanced">Advanced</option>
-                    <option value="Student">Student</option>
-                    <option value="Instructor">Instructor</option>
-                    <option value="Professional">Professional</option>
+                </select>
+            </div>
+            <div className="form-group">
+                <select name="snblevel" value={snblevel} onChange={(event) => onChange(event)}>
+                    <option value="0">Select Snowboard Level</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
                 </select>
             </div>
 
             <div className="form-group">
-                <textarea placeholder="A short bio of yourself" name="about" value={about} onChange={(event) => onChange(event)}></textarea>
+                <textarea placeholder="A short bio of yourself" name="bio" value={bio} onChange={(event) => onChange(event)}></textarea>
             </div>
 
-            {/* <div className="form-group">
-                <select name="status" value={status} onChange={(event) => onChange(event)}>
-                    <option value="student">* Select Ski Level</option>
-                    <option value="instructor">Developer</option>
-                </select>
-                <small className="form-text"
-                    >select your status</small
-                >
-            </div> */}
             <div className="form-group">
-                <input type="text" placeholder="Titles" name="titles" value = {titles} onChange={(event) => onChange(event)} />
+                <input type="text" placeholder="City" name="location" value = {location} onChange={(event) => onChange(event)} />
                
-            </div>
-            <div className="form-group">
-                <input type="text" placeholder="Competitions" name="competitions" value = {competitions} onChange={(event) => onChange(event)}/>
-                
             </div>
 
             <div className="form-group social-input">

@@ -13,16 +13,20 @@ const HomePage = ({getCurrentProfile, auth: {user}, profile: {profile, loading}}
 
     console.log("profile", profile)
 
-    return loading && profile === null ? <Spinner /> : <Fragment>
-        <h1 className="large text-primary">Dashboard</h1>
-        <p className="lead">
-            <i className ="fas fa-user"></i> Welcome {user && user.name}
-        </p>
+    return  (
+        <div className="settings">
+        {loading && profile === null ? <Spinner /> : <Fragment>
+            <h1 className="large" style={{textTransform: 'uppercase'}}>Profile Actions</h1>
+            <h4 className="welcome" style={{paddingBottom: '25px'}}>
+               {user && user.name}
+            </h4>
         {profile !==null ? <Fragment><HomeActions /></Fragment> : <Fragment>
             <p>You don't have a profile yet, please creare one</p>
             <Link to='/create-profile' className='btn btn-primary my-1'> Create profile</Link>
-            </Fragment>}
-    </Fragment>
+            </Fragment> }
+        </Fragment> }
+    </div> 
+    )
 }
 
 HomePage.propTypes = {

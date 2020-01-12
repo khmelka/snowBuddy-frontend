@@ -28,17 +28,19 @@
 
 // export default MapContainer
 
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 
 import Map from './Map'
 import ResortContainer from './ResortContainer'
+import Spinner from '../containers/Spinner'
 
 
 export class MapContainer extends Component {
 
     state = {
         resorts: [],
-        selectedResort: null
+        selectedResort: null,
+        loading: true
     }
 
     setSelectedResort = (resort) => {
@@ -64,17 +66,21 @@ export class MapContainer extends Component {
         .then(resorts=> {
             console.log("resorts", resorts)
             this.setState({
-                resorts
+                resorts,
+                loading: false
             })
+            
           })
     }
 
+    //check the spinner 
     render() {
-        return ( 
+        return ( this.state.loading && this.state.resorts === [] ? <Spinner /> : <Fragment>
             <div className='mapPage'>
                 <ResortContainer resorts={this.state.resorts} setSelectedResort={this.setSelectedResort} />
                 <Map resorts={this.state.resorts} setSelectedResort={this.setSelectedResort} selectedResort={this.state.selectedResort}/>
             </div> 
+            </Fragment>
         ) 
     }
 }

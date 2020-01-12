@@ -15,6 +15,8 @@ import {loadUser}from './redux/actions/auth'
 import CreateProfile from './components/profile/CreateProfile'
 import EditProfile from './components/profile/EditProfile'
 import MapContainer from './components/map/MapContainer'
+import ProfilesContainer from './components/profiles/ProfilesContainer'
+import ProfileContainer from './components/profile/ProfileContainer'
 
 if(localStorage.token) {
   setAuthToken(localStorage.token)
@@ -35,10 +37,11 @@ const App = ({auth:{user}}) => {
                 <Route path="/register" component={Register} />
                 <Route path="/login" component={Login} />
                 <PrivateRoute exact path="/homepage" component={HomePage} />
-                {/* <PrivateRoute exact path={`/profile/${user && user._id}`} component={Profile} /> */}
+                <PrivateRoute exact path="/profile/:id" component={ProfileContainer} />
                 <PrivateRoute exact path="/create-profile" component={CreateProfile} />
                 <PrivateRoute exact path="/edit-profile" component={EditProfile} />
                 <PrivateRoute exact path="/map" component={MapContainer} />
+                <PrivateRoute exact path="/profiles" component={ProfilesContainer} />
 
             </Switch>  
           </section>

@@ -7,10 +7,10 @@ export const ResortContainer = ({resorts, setSelectedResort}) => {
             
             <ul className="list-group">
             <div className="resortTitleContainer">
-               <p className="resortTitle"><b>Resorts</b></p> 
+               <p className="resortTitle"><b>Colorado Resorts</b></p> 
             </div>
                         {resorts.map((resort)=> {
-                            return  <Resorts resort={resort} setSelectedResort={setSelectedResort} resortname={resort.resortname} logo={resort.logo} score={resort.score} latitude={resort.latitude} longitude={resort.longitude}/>   
+                            return  <Resorts key={resort.id} resort={resort} setSelectedResort={setSelectedResort} resortname={resort.resortname} logo={resort.logo} score={resort.score} latitude={resort.latitude} longitude={resort.longitude}/>   
                         })}
                 </ul>    
         </div>

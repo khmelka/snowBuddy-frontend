@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Resorts = (props) => {
     return (
-        <div class="hi" onClick={() => {
+        <div onClick={() => {
               props.setSelectedResort(props.resort)
           }}>
             <a href="#" className="list-group-item list-group-item-action">

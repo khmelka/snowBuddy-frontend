@@ -38,7 +38,7 @@ export const register = ({name, email, password}) => async dispatch => {
             type: REGISTER_SUCCESS,
             payload: res.data
         })
-        // dispatch(loadUser())
+        dispatch(loadUser())
     } catch (error) {
         console.error(error)
         const errors = error.response.data.errors
