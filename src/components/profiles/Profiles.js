@@ -7,10 +7,16 @@ const Profiles = ({profile: {user: {_id, name, avatar}, sport, location}}) => {
         <div className="profile">
             <img src={avatar} alt="" className="round-img" style={{marginLeft: '25px'}}/> 
             <div style={{color:'blue'}}>
-            <h3 >{name}</h3>
-            <h5 style={{textTransform: 'uppercase'}}>Sport: {sport}</h5>
-            <h5 style={{textTransform: 'uppercase'}}>City: {location}</h5>
-        </div>
+                <h3 >{name}</h3>
+
+                <div className="profileItems">
+                    <h5 style={{textTransform: 'uppercase'}}>Sport</h5> <h5>{sport}</h5>
+                </div>
+
+                <div className="profileItems">
+                    <h5 style={{textTransform: 'uppercase'}}>City</h5> <h5>{location}</h5>
+                </div>
+            </div>
 
             <Link to={`/profile/${_id}`} className='btn btn-primary' style={{display: 'inline-table',width: '230px', marginTop: '5px'}}>
                 View Profile

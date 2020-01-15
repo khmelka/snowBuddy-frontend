@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {setAlert} from './alert'
 
-import {GET_PROFILE, PROFILE_ERROR, GET_ALL_PROFILES, CLEAR_PROFILE} from './types'
+import {GET_PROFILE, PROFILE_ERROR, GET_ALL_PROFILES, CLEAR_PROFILE, DELETE_ACCOUNT} from './types'
 
 //
 export const getCurrentProfile = () => async dispatch => {
@@ -34,7 +34,7 @@ export const createProfile=(formData, history, edit = false) => async dispatch =
             type: GET_PROFILE,
             payload: res.data
         })
-        dispatch(setAlert(edit ? 'Profile has been updated' : 'Profile has been created', 'success'))
+        dispatch(setAlert(edit ? 'Profile has been updated' : 'Profile has been created', 'good'))
 
         if(!edit) {
             history.push('/homepage')
@@ -42,7 +42,7 @@ export const createProfile=(formData, history, edit = false) => async dispatch =
     } catch (error) {
         const errors = error.response.data.errors
         if (errors) {
-            errors.forEach(error => dispatch(setAlert(error.msg, 'danger ')))
+            errors.forEach(error => dispatch(setAlert(error.msg, 'bad ')))
         }
         dispatch({
             type: PROFILE_ERROR,
@@ -83,3 +83,22 @@ export const getProfileById = (userId) => async dispatch => {
         })
     }
 }
+
+//delete account and profile 
+export const deleteAccount = () => async dispatch => {
+    if (window.confirm('Are you sure? The account will be deleted')) {
+      try {
+        await axios.delete('https://lit-sands-19035.herokuapp.com/profile')
+  
+        dispatch({ type: CLEAR_PROFILE })
+        dispatch({ type: DELETE_ACCOUNT })
+  
+        dispatch(setAlert('Goodbye! Your account had been deleted!', 'delete'))
+      } catch (err) {
+        dispatch({
+          type: PROFILE_ERROR,
+          payload: { msg: err.response.statusText, status: err.response.status }
+        })
+      }
+    }
+  }

@@ -89,7 +89,7 @@ const CreateProfile = ({createProfile, history}) => {
             </div>
             
             <input type="submit" className="btn btn-primary my-1" />
-            <Link className="btn btn-light my-1" to="/homepage">Go Back</Link>
+            <Link className="btn btn-light my-1" to="/homepage" style={{float: "right"}}>Go Back</Link>
         </form>
         </div>
         </div>
