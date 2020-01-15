@@ -13,7 +13,7 @@ const ProfileContainer = ({getProfileById, profile: {profile, loading}, auth: {u
     console.log(loading, 'loading from profile')
     return  <Fragment>
         { profile === null ? 
-            <div className="settings"><h3>You have created a profile yet!</h3> <br></br>
+            <div className="settings"><h3>You have not created a profile yet!</h3> <br></br>
             <Link to='/create-profile' className='btn btn-primary my-1'> Create profile</Link>
             </div> :
         loading ? <Spinner /> : 

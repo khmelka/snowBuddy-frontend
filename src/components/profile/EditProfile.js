@@ -47,6 +47,7 @@ const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProf
             createProfile(formData, history, true)
         }
 
+        console.log("edit", profile && profile._id)
     return (
         <div className="profileFormMainContainer">
         <div className="col-md-4 col-md-4 col-md-12">
@@ -68,7 +69,7 @@ const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProf
 
             <div className="form-group">
                 <select name="skilevel" value={skilevel} onChange={(event) => onChange(event)}>
-                    <option value="0">Select Ski Level</option>
+                    <option value="">Select Ski Level</option>
                     <option value="Beginner">Beginner</option>
                     <option value="Intermediate">Intermediate</option>
                     <option value="Advanced">Advanced</option>
@@ -76,7 +77,7 @@ const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProf
             </div>
             <div className="form-group">
                 <select name="snblevel" value={snblevel} onChange={(event) => onChange(event)}>
-                    <option value="0">Select Snowboard Level</option>
+                    <option value="">Select Snowboard Level</option>
                     <option value="Beginner">Beginner</option>
                     <option value="Intermediate">Intermediate</option>
                     <option value="Advanced">Advanced</option>
@@ -103,7 +104,7 @@ const EditProfile = ({profile: {profile, loading}, createProfile, getCurrentProf
             </div>
             
             <input type="submit" className="btn btn-primary my-1" />
-            <Link className="btn btn-light my-1" to="/homepage">Go Back?</Link>
+            <Link className="btn btn-light my-1" to={`/homepage`} style={{float:"right"}}>Back</Link>
         </form>
         </div>
         </div>

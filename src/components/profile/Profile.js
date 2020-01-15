@@ -29,21 +29,40 @@ const Profile = ({profile: {sport, skilevel, snblevel, bio, location, facebook, 
 
               <div className="profileBottom">
                 <div className="items">
-                <h3>Sport: {sport}</h3>
+                <div className="itemsStyle">
+                      <h3 style={{textDecoration: 'underline'}}>Sport </h3> {sport && <h4> {sport}</h4>}
+                    </div>
 
-                <h3>{skilevel && <span> Ski Level: {skilevel}</span>}</h3>
 
-                <h3>{snblevel && <span> Snowboard Level: {snblevel}</span>}</h3>
+                    <div className="itemsStyle">
+                      {skilevel && (
+                        <Fragment>
+                          <h3 style={{textDecoration: 'underline'}}>  Ski Level </h3> 
+                              <h4> {skilevel}</h4>
+                        </Fragment>
+                            )}
+                    </div>
 
-                <h3>City: {location}</h3>
+                    <div className="itemsStyle">
+                      {snblevel && (
+                        <Fragment>
+                          <h3 style={{textDecoration: 'underline'}}>  Snowboard Level </h3> 
+                              <h4> {snblevel}</h4>
+                        </Fragment>
+                            )}
+                    </div>
+
+                    <div className="itemsStyle">
+                       <h3 style={{textDecoration: 'underline'}}>Location </h3> {location && <h4> {location}</h4>}
+                    </div>
               </div>
               
               <div className="bio">
               {bio && (
                   <Fragment>
-                    <h3> Bio</h3>
-                    <h3>{bio}</h3>
-                    <div className='line' />
+                    <h3 style={{textDecoration: 'underline'}}>About</h3>
+                    <h4>{bio}</h4>
+                    {/* <div className='line' /> */}
                   </Fragment>
                   )}
             

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import{connect} from 'react-redux'
 import {login} from '../../redux/actions/auth'
 
-const Login = ({login, isAuthenticated, user}) => {
+const Login = ({login, isAuthenticated}) => {
     const [formData, setFormData] = useState({
         email: "",
         password: ""
@@ -29,7 +29,7 @@ const Login = ({login, isAuthenticated, user}) => {
                 <div className="col-md-4 col-md-4 col-md-12">
                     <form className="form-container" onSubmit ={(event) => onSubmit(event)}>
                         <div className="mainname">
-                            <h1 className="name">Welcome to Ski Buddy!</h1>
+                            <h1 className="name">Welcome to Snow Buddy!</h1>
                         </div>
                         <div className="form-group">
                             <input 
@@ -52,6 +52,8 @@ const Login = ({login, isAuthenticated, user}) => {
                             />
                         </div>
                         <button type="submit" className="btn btn-primary">Login</button>
+                        <Link to='/register' className = "btn btn-primary" style={{float: 'right'}}> Register</Link>
+
                      </form>
                   </div>
              </div>
@@ -66,7 +68,6 @@ Login.propTypes = {
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
-    user: state.auth.user,
 })
 
 export default connect(mapStateToProps, {login})(Login)

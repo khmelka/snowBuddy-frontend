@@ -20,23 +20,23 @@ const Register = ({setAlert, register, isAuthenticated, user}) => {
     const onSubmit = async (event) => {
         event.preventDefault()
         if(password !== password2) {
-           setAlert('Passwords do not match', 'danger')
+           setAlert('Passwords do not match', 'bad')
         }
         else {
             register(({name, email, password}))
       }
   }
-  if (isAuthenticated) {
-    return <Redirect to="/homepage" />
-}
-console.log("register", user)
+        if (isAuthenticated) {
+        return <Redirect to="/homepage" />
+        }
+
     return (
         <div className="signinMainContainer">
             <div className="row">
                 <div className="col-md-4 col-md-4 col-md-12">
                     <form className="form-container" onSubmit={(event) => onSubmit(event)}>
                         <div className="mainname">
-                            <h1 className="name">Welcome to Ski Buddy!</h1>
+                            <h1 className="name">Welcome to Snow Buddy!</h1>
                         </div>
                         <div className="form-group">
                             <input 
@@ -79,6 +79,8 @@ console.log("register", user)
                             />
                         </div>
                         <input type="submit" className="btn btn-primary" value="Register" />
+                        <Link to='/login' className = "btn btn-primary" style={{float: 'right'}}>Login</Link>
+
                      </form>
                   </div>
              </div>
